@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Team HTML</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat%7COpen+Sans:700,400%7CRaleway:400,800,900"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link href="css/library/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link
+      href="dev-assets/preloader-default.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="dev-assets/demo-switcher.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- 
+    
+    Enable one styles which the you want
+    
+    <link href="css-min/soccer.min.css" rel="stylesheet" type="text/css" />
+    <link href="css-min/hockey.min.css" rel="stylesheet" type="text/css" />
+    <link href="css-min/basketball.min.css" rel="stylesheet" type="text/css" />
+    <link href="css-min/football.min.css" rel="stylesheet" type="text/css" />
+    <link href="css-min/baseball.min.css" rel="stylesheet" type="text/css" />
+    <link href="css-min/dota.min.css" rel="stylesheet" type="text/css" />
+    <link href="css-min/csgo.min.css" rel="stylesheet" type="text/css" />
+    
+    All libraries included in this css, concating rules in /grunt/cssmin.js
+    Use grunt default task for creating this files
+    
+    -->
+  </head>
+
+  <body>
+    <div class="preloader-wrapper" id="preloader">
+      <div class="motion-line dark-big"></div>
+      <div class="motion-line yellow-big"></div>
+      <div class="motion-line dark-small"></div>
+      <div class="motion-line yellow-normal"></div>
+      <div class="motion-line yellow-small1"></div>
+      <div class="motion-line yellow-small2"></div>
+    </div>
+
+    <!--MAIN MENU WRAP BEGIN-->
+    <div class="main-menu-wrap sticky-menu">
+      <div class="container">
+        <a href="index.html" class="custom-logo-link"
+          ><img src="images/soccer/logo.png" alt="logo" class="custom-logo"
+        /></a>
+        <button
+          type="button"
+          class="navbar-toggle collapsed"
+          data-toggle="collapse"
+          data-target="#team-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <nav class="navbar">
+          <div class="collapse navbar-collapse" id="team-menu">
+            <ul class="main-menu nav">
+              <li class="active">
+                <a href="index.html"><span>Home</span></a>
+              </li>
+              <li>
+                <a href="matches.html"><span>Matches</span></a>
+              </li>
+              <li>
+                <a href="team.html"><span>Team</span></a>
+              </li>
+
+              <li>
+                <a href="upcoming-match.html"><span>Starting XI</span></a>
+              </li>
+
+              <li>
+                <a href="sport-team-landing.html"
+                  ><span>League Standing</span></a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+    <!--MAIN MENU WRAP END-->
+
+    <div class="main-slider-section">
+      <div class="main-slider">
+        <div
+          id="main-slider"
+          class="carousel slide"
+          data-ride="carousel"
+          data-interval="4000"
+        >
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <div class="main-slider-caption">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="match-date">
+                        26 Sep 2024 / 9:30 PM / Etihad
+                      </div>
+                      <div class="team">
+                        Team Name 1
+                        <div class="big-count">2:0</div>
+                        Team Name 2
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="main-slider-caption">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="match-date">
+                        26 Sep 2024 / 9:30 PM / Camp Nou
+                      </div>
+                      <div class="team">Team Name 1 - Team Name 2</div>
+                      <div class="counter" data-date="1534185200000">
+                        <ul>
+                          <li>
+                            <div class="digit days"></div>
+                            <div class="descr">Days</div>
+                          </li>
+                          <li>
+                            <div class="digit hours"></div>
+                            <div class="descr">Hours</div>
+                          </li>
+                          <li>
+                            <div class="digit minutes"></div>
+                            <div class="descr">Minutes</div>
+                          </li>
+                          <li>
+                            <div class="digit seconds"></div>
+                            <div class="descr">Seconds</div>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="item">
+              <div class="main-slider-caption">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="match-date">
+                        26 Sep 2024 / 9:30 PM / Anfield
+                      </div>
+                      <div class="team">
+                        Team Name 1
+                        <div class="big-count">2:0</div>
+                        Team Name 2
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <a
+            class="nav-arrow left-arrow"
+            href="#main-slider"
+            role="button"
+            data-slide="prev"
+          >
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <span class="sr-only"></span>
+          </a>
+          <a
+            class="nav-arrow right-arrow"
+            href="#main-slider"
+            role="button"
+            data-slide="next"
+          >
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            <span class="sr-only"></span>
+          </a>
+
+          <!-- s
+            <div class="container">
+              <div class="row no-gutter carousel-indicators">
+                <div
+                  class="col-sm-4 active"
+                  data-slide-to="0"
+                  data-target="#main-slider"
+                >
+                  <a href="#" class="nav-item">
+                    <span class="championship">Previous </span>
+                    <span class="teams-wrap">
+                      <span class="team"
+                        ><img src="images/soccer/manutd.jpeg" alt="team-logo"
+                      /></span>
+                      <span class="score">
+                        <span>1:0</span>
+                      </span>
+
+                      <span class="team1">
+                        <span
+                          ><img
+                            src="images/soccer/mancity.jpeg"
+                            alt="team-logo"
+                        /></span>
+                      </span>
+                    </span>
+                  </a>
+                </div>
+
+                <div
+                  class="col-sm-4"
+                  data-slide-to="1"
+                  data-target="#main-slider"
+                >
+                  <a href="#" class="nav-item">
+                    <span class="championship">Current</span>
+                    <span class="teams-wrap">
+                      <span class="team"
+                        ><img src="images/soccer/arsenal.jpeg" alt="team-logo"
+                      /></span>
+                      <span class="score">
+                        <span>VS</span>
+                      </span>
+
+                      <span class="team1">
+                        <span
+                          ><img
+                            src="images/soccer/topspurs.png"
+                            alt="team-logo"
+                        /></span>
+                      </span>
+                    </span>
+                    <span class="game-result"
+                      >26 Sep 2024 / 9:30 PM / Wembley</span
+                    >
+                  </a>
+                </div>
+
+                <div
+                  class="col-sm-4"
+                  data-slide-to="2"
+                  data-target="#main-slider"
+                >
+                  <a href="#" class="nav-item">
+                    <span class="championship">Next </span>
+                    <span class="teams-wrap">
+                      <span class="team"
+                        ><img src="images/soccer/brentford.png" alt="team-logo"
+                      /></span>
+                      <span class="score">
+                        <span>VS</span>
+                      </span>
+
+                      <span class="team1">
+                        <span
+                          ><img
+                            src="images/soccer/west ham.png"
+                            alt="team-logo"
+                        /></span>
+                      </span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+
+    <!--MAIN MACTH SHEDULE BEGIN-->
+
+    <section class="main-match-shedule">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <h6>Next match</h6>
+
+            <div class="main-next-match bg-cover">
+              <img
+                src="images/soccer/next-match-bg.jpg"
+                class="next-match-background-img"
+                alt="next-image"
+              />
+              <div class="wrap">
+                <div class="place">Estadio Santiago Bernabeau</div>
+                <div class="date">28 septemer 2024 / 8:30 PM</div>
+                <div class="teams-wrap">
+                  <a class="team">
+                    <span>Team 1</span>
+                    <span
+                      ><img src="images/soccer/mancity.jpeg" alt="team-image"
+                    /></span>
+                  </a>
+                  <div class="vs">vs</div>
+                  <a class="team1">
+                    <span
+                      ><img
+                        src="images/soccer/aston villa.png"
+                        alt="team-image"
+                    /></span>
+                    <span>Team2</span>
+                  </a>
+                </div>
+                <a href="#" class="booking">UPCOMING MATCH</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-12 col-xs-12">
+            <h6>Latest matches</h6>
+
+            <div class="main-lates-matches">
+              <a href="#" class="item">
+                <span class="championship">Premier league </span>
+                <span class="teams-wrap">
+                  <span class="team">
+                    <span>
+                      <img src="images/soccer/brighton.jpg" alt="team-image" />
+                    </span>
+                    <span>Team 1</span>
+                  </span>
+                  <span class="score">
+                    <span>0:0</span>
+                  </span>
+                  <span class="team1">
+                    <span>Internacional</span>
+                    <span
+                      ><img src="images/soccer/chelsea.png" alt="team-image"
+                    /></span>
+                  </span>
+                </span>
+              </a>
+              <a href="#" class="item">
+                <span class="championship">Premier league - quarterfinal</span>
+                <span class="teams-wrap">
+                  <span class="team">
+                    <span>
+                      <img src="images/soccer/wolves.png" alt="team-image" />
+                    </span>
+                    <span>Team 1</span>
+                  </span>
+                  <span class="score">
+                    <span>0:0</span>
+                  </span>
+                  <span class="team1">
+                    <span>Team 2</span>
+                    <span
+                      ><img
+                        src="images/soccer/crystal palace.png"
+                        alt="team-image"
+                    /></span>
+                  </span>
+                </span>
+              </a>
+              <a href="#" class="item">
+                <span class="championship">Premier league </span>
+                <span class="teams-wrap">
+                  <span class="team">
+                    <span>
+                      <img src="images/soccer/west ham.png" alt="team-image" />
+                    </span>
+                    <span>Team 1</span>
+                  </span>
+                  <span class="score">
+                    <span>0:0</span>
+                  </span>
+                  <span class="team1">
+                    <span>Team 2</span>
+                    <span
+                      ><img src="images/soccer/everton.png" alt="team-image"
+                    /></span>
+                  </span>
+                </span>
+              </a>
+              <a href="#" class="item">
+                <span class="championship">Premier league </span>
+                <span class="teams-wrap">
+                  <span class="team">
+                    <span>
+                      <img
+                        src="images/soccer/southhampton.png"
+                        alt="team-image"
+                      />
+                    </span>
+                    <span>Team 1</span>
+                  </span>
+                  <span class="score">
+                    <span>0:0</span>
+                  </span>
+                  <span class="team1">
+                    <span>Team 2</span>
+                    <span
+                      ><img src="images/soccer/ipswich.png" alt="team-image"
+                    /></span>
+                  </span>
+                </span>
+              </a>
+              <a href="#" class="item">
+                <span class="championship">Premier league</span>
+                <span class="teams-wrap">
+                  <span class="team">
+                    <span>
+                      <img src="images/soccer/fulham.png" alt="team-image" />
+                    </span>
+                    <span>Team 1</span>
+                  </span>
+                  <span class="score">
+                    <span>0:0</span>
+                  </span>
+                  <span class="team1">
+                    <span>Team 2</span>
+                    <span
+                      ><img src="images/soccer/wolves.png" alt="team-image"
+                    /></span>
+                  </span>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--MAIN MACTH SHEDULE END-->
+
+   
+    <!--SUCCESS STORY BEGIN-->
+    <section class="success-story sport">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h4>About Us</h4>
+            <p>
+              Welcome to Pro Analyst, where we combine the passion for football
+              with the power of artificial intelligence. Our mission is to
+              revolutionize the way football is analyzed, understood, and
+              experienced by everyone—from coaches and analysts to players and
+              fans.
+            </p>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="icon">
+                  <img src="images/common/success-icon.png" alt="succes-icon" />
+                </div>
+                <div class="title">" "</div>
+                <p>" Where AI Meets the Beautiful Game."</p>
+              </div>
+              <div class="col-md-6">
+                <div class="icon">
+                  <img
+                    src="images/common/success-icon1.png"
+                    alt="succes-icon"
+                  />
+                </div>
+                <div class="title">" "</div>
+                <p>" Analyze. Optimize. Dominate the Field. "</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--SUCCESS STORY END-->
+
+    <!--CALL TO ACTION BEGIN-->
+    <div class="call-to-action">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-sm-9 col-xs-6"></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="main-team-store"></section>
+
+    <!--MAIN TEAM STORE END-->
+
+    <div class="main-breaking-news">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 col-sm-3 col-xs-12">
+            <div class="break-title">
+              <span> PRO Analyst </span>
+            </div>
+          </div>
+          <div class="col-md-10 col-sm-9 col-xs-12">
+            <div
+              id="main-breaking-list"
+              class="carousel slide main-breaking-list"
+              data-ride="carousel"
+            >
+              <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                  <a href="index.html" class=" ">
+                    <span class="date">
+                      <span></span>
+                    </span>
+                    <span class="news"
+                      >" Turning Every Play into a Winning Strategy. "</span
+                    >
+                  </a>
+                </div>
+                <div class="item">
+                  <a href="index.html" class=" ">
+                    <span class="date">
+                      <span></span>
+                    </span>
+                    <span class="news"
+                      >" Elevate Your Game with Cutting-Edge Football Insights.
+                      "</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <div class="arrow-wrap">
+                <!-- Controls -->
+                <a
+                  class="nav-arrow left-arrow"
+                  href="#main-breaking-list"
+                  role="button"
+                  data-slide="prev"
+                >
+                  <i class="fa fa-caret-left" aria-hidden="true"></i>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a
+                  class="nav-arrow right-arrow"
+                  href="#main-breaking-list"
+                  role="button"
+                  data-slide="next"
+                >
+                  <i class="fa fa-caret-right" aria-hidden="true"></i>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--FOOTER BEGIN-->
+    <footer class="footer">
+      <div class="wrapper-overfllow">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-sm-12">
+              <div class="footer-left">
+                <div class="wrap">
+                  <a href="index.html" class="foot-logo"
+                    ><img
+                      src="images/soccer/footer-logo.png"
+                      alt="footer-logo"
+                    />
+                    <div></div>
+                    <p>"Your Game, Your Data, Your Victory."</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-lg-offset-1">
+              <div class="foot-news"></div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-12">
+              <div class="foot-contact"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-menu-wrap">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <a href="#top" class="foot-up"
+                ><span
+                  >up <i class="fa fa-caret-up" aria-hidden="true"></i></span
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-6"></div>
+            <div class="col-xs-6">
+              <div class="created"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!--FOOTER END-->
+
+    <script type="text/javascript" src="js/library/jquery.js"></script>
+    <script type="text/javascript" src="js/library/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/library/bootstrap.js"></script>
+    <script type="text/javascript" src="js/library/jquery.sticky.js"></script>
+    <script
+      type="text/javascript"
+      src="js/library/jquery.jcarousel.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/library/jcarousel.connected-carousels.js"
+    ></script>
+    <script type="text/javascript" src="js/library/owl.carousel.js"></script>
+    <script type="text/javascript" src="js/library/progressbar.js"></script>
+    <script
+      type="text/javascript"
+      src="js/library/jquery.bracket.min.js"
+    ></script>
+    <script type="text/javascript" src="js/library/chartist.js"></script>
+    <script type="text/javascript" src="js/library/Chart.js"></script>
+    <script type="text/javascript" src="js/library/fancySelect.js"></script>
+    <script type="text/javascript" src="js/library/isotope.pkgd.js"></script>
+    <script
+      type="text/javascript"
+      src="js/library/imagesloaded.pkgd.js"
+    ></script>
+
+    <script type="text/javascript" src="js/jquery.team-coundown.js"></script>
+    <script type="text/javascript" src="js/matches-slider.js"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+    <script
+      type="text/javascript"
+      src="js/matches_broadcast_listing.js"
+    ></script>
+    <script type="text/javascript" src="js/news-line.js"></script>
+    <script type="text/javascript" src="js/match_galery.js"></script>
+    <script type="text/javascript" src="js/main-club-gallery.js"></script>
+    <script type="text/javascript" src="js/product-slider.js"></script>
+    <script type="text/javascript" src="js/circle-bar.js"></script>
+    <script type="text/javascript" src="js/standings.js"></script>
+    <script type="text/javascript" src="js/shop-price-filter.js"></script>
+    <script type="text/javascript" src="js/timeseries.js"></script>
+    <script type="text/javascript" src="js/radar.js"></script>
+    <script type="text/javascript" src="js/slider.js"></script>
+    <script type="text/javascript" src="js/preloader.js"></script>
+    <script type="text/javascript" src="js/diagram.js"></script>
+    <script type="text/javascript" src="js/bi-polar-diagram.js"></script>
+    <script type="text/javascript" src="js/label-placement-diagram.js"></script>
+    <script type="text/javascript" src="js/donut-chart.js"></script>
+    <script type="text/javascript" src="js/animate-donut.js"></script>
+    <script type="text/javascript" src="js/advanced-smil.js"></script>
+    <script type="text/javascript" src="js/svg-path.js"></script>
+    <script type="text/javascript" src="js/pick-circle.js"></script>
+    <script type="text/javascript" src="js/horizontal-bar.js"></script>
+    <script type="text/javascript" src="js/gauge-chart.js"></script>
+    <script type="text/javascript" src="js/stacked-bar.js"></script>
+
+    <script
+      type="text/javascript"
+      src="js/library/chartist-plugin-legend.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/library/chartist-plugin-threshold.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="js/library/chartist-plugin-pointlabels.js"
+    ></script>
+
+    <script type="text/javascript" src="js/treshold.js"></script>
+    <script type="text/javascript" src="js/visible.js"></script>
+    <script type="text/javascript" src="js/anchor.js"></script>
+    <script type="text/javascript" src="js/landing_carousel.js"></script>
+    <script type="text/javascript" src="js/landing_sport_standings.js"></script>
+    <script type="text/javascript" src="js/twitterslider.js"></script>
+    <script type="text/javascript" src="js/champions.js"></script>
+    <script type="text/javascript" src="js/landing_mainnews_slider.js"></script>
+    <script type="text/javascript" src="js/carousel.js"></script>
+    <script type="text/javascript" src="js/video_slider.js"></script>
+    <script type="text/javascript" src="js/footer_slides.js"></script>
+    <script type="text/javascript" src="js/player_test.js"></script>
+
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script type="text/javascript" src="dev-assets/demo-switcher.js"></script>
+  </body>
+</html>
