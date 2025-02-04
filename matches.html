@@ -186,28 +186,6 @@
 
           <div class="tab-content">
             <div class="owl-carousel match-carousel">
-              <!-- Match 1 -->
-              <!-- <div class="amateurs-main-match">
-                <div class="title">Premier League - Round 28</div>
-                <a href="matches.html" class="team">
-                  <span class="image"><img src="images/soccer/brighton.jpg" alt="Brighton" /></span>
-                  <span class="info">
-                    <span class="name">Brighton & Hove Albion</span>
-                    <span class="city">UK</span>
-                  </span>
-                </a>
-                <div class="score"><span>0:0</span></div>
-                <a href="matches.html" class="team guest">
-                  <span class="info">
-                    <span class="name">Manchester United</span>
-                    <span class="city">Manchester</span>
-                  </span>
-                  <span class="image"><img src="images/soccer/manutd.jpeg" alt="Manchester United" /></span>
-                </a>
-                <div class="title">26 September / 8:45 PM</div>
-              </div> -->
-
-
             </div>
           </div>
 
@@ -437,14 +415,12 @@
           return response.json(); // Parse JSON response
         })
         .then(data => {
-          console.log("API Response:", data); // Check if data is received
           if (!Array.isArray(data)) {
             throw new Error("Expected an array but got something else.");
           }
           displayUpcomingTeamDetails(data);
         })
         .catch(error => {
-          console.error("Error fetching match data:", error);
           document.getElementById("team-details").innerHTML =
             "<p>Error loading match details. Please try again later.</p>";
         });

@@ -8,7 +8,8 @@
   <meta name="keywords" content="" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Team HTML</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat%7COpen+Sans:700,400%7CRaleway:400,800,900" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat%7COpen+Sans:700,400%7CRaleway:400,800,900"
+    rel="stylesheet" />
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
   <link href="css/library/bootstrap.css" rel="stylesheet" type="text/css" />
   <link href="dev-assets/preloader-default.css" rel="stylesheet" type="text/css" />
@@ -60,7 +61,8 @@
           <div class="top-language">
             <ul class="list">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/common/en-flag.png" alt="selected language" />EN</a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="images/common/en-flag.png"
+                    alt="selected language" />EN</a>
                 <ul class="dropdown-menu">
                   <li>
                     <a href="#"><img src="images/common/fr-flag.png" alt="language" />FR</a>
@@ -91,8 +93,10 @@
   <!--MAIN MENU WRAP BEGIN-->
   <div class="main-menu-wrap sticky-menu">
     <div class="container">
-      <a href="index.html" class="custom-logo-link"><img src="images/soccer/logo.png" alt="logo" class="custom-logo" /></a>
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#team-menu" aria-expanded="false">
+      <a href="index.html" class="custom-logo-link"><img src="images/soccer/logo.png" alt="logo"
+          class="custom-logo" /></a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#team-menu"
+        aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -156,31 +160,6 @@
       <div class="row row-offcanvas row-offcanvas-left">
         <!--SIDEBAR BEGIN-->
         <div id="team-player-details"></div>
-        <!-- <div class="col-md-12 col-sm-12 col-xs-12">
-          <div class="main-lates-matches">
-            <a href="#" class="item">
-
-              <span class="teams-wrap">
-                <span class="team">
-                  <span>
-                    <centre>
-                      <img src="images/soccer/bournemouth.png" alt="team-image" />
-
-                  </span>
-                  <span>Bournemouth</span>
-                  </centre>
-                </span>
-
-              </span>
-            </a>
-
-
-
-            </span>
-
-
-          </div>
-        </div> -->
       </div>
       <!--SIEDBAR END-->
       <!--NEWS LIST BEGIN-->
@@ -239,37 +218,42 @@
   <script>
     function fetchIndividualTeamData() {
       let teamId = localStorage.getItem("selectedTeamId");
-        const apiUrl = `http://127.0.0.1:8000/team/${teamId}/players`; // Replace with your actual API URL
+      const apiUrl = `http://127.0.0.1:8000/team/${teamId}/players`; // Replace with your actual API URL
 
-        // Fetch data from the API
-        fetch(apiUrl)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json(); // Parse the response as JSON
-            })
-            .then(data => {
-                let allTeamsData = data.results; // Assuming the API response contains the 'results' array
+      // Fetch data from the API
+      fetch(apiUrl)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json(); // Parse the response as JSON
+        })
+        .then(data => {
+          let allTeamsData = data.results; // Assuming the API response contains the 'results' array
 
-                // If data is fetched successfully, display it on the page
-                displayTeamDetails(allTeamsData);
-            })
-            .catch(error => {
-                console.error('Error fetching team data:', error);
-                document.getElementById('team-player-details').innerHTML = '<p>Error loading team details. Please try again later.</p>';
-            });
+          // Check if data.results is an array
+          if (Array.isArray(allTeamsData)) {
+            // If data is fetched successfully and it's an array, display it on the page
+            displayTeamDetails(allTeamsData);
+          } else {
+            throw new Error('The data format is incorrect or "results" is not an array');
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching team data:', error);
+          document.getElementById('team-player-details').innerHTML = '<p>Error loading team details. Please try again later.</p>';
+        });
     }
 
     // Function to display team details on the page
     function displayTeamDetails(allTeamsData) {
-        const teamDetails = document.getElementById('team-player-details');
+      const teamDetails = document.getElementById('team-player-details');
 
-        // Clear any existing content
-        teamDetails.innerHTML = '';
+      // Clear any existing content
+      teamDetails.innerHTML = '';
 
-        // Create the table structure once
-        let tableHtml = `
+      // Create the table structure once
+      let tableHtml = `
             <table>
                 <tr>
                     <th>Name</th>
@@ -288,9 +272,9 @@
                 </tr>
         `;
 
-        // Loop through the array of teams and create rows
-        allTeamsData.forEach(team => {
-            tableHtml += `
+      // Loop through the array of teams and create rows
+      allTeamsData.forEach(team => {
+        tableHtml += `
                 <tr>
                     <td>${team.name}</td>
                     <td>${team.position}</td>
@@ -307,18 +291,19 @@
                     <td>${team.rating}</td>
                 </tr>
             `;
-        });
+      });
 
-        // Close the table
-        tableHtml += `</table>`;
+      // Close the table
+      tableHtml += `</table>`;
 
-        // Set the final HTML content
-        teamDetails.innerHTML = tableHtml;
+      // Set the final HTML content
+      teamDetails.innerHTML = tableHtml;
     }
 
     // Fetch team data when the page loads
     window.onload = fetchIndividualTeamData;
-</script>
+  </script>
+
   <script type="text/javascript" src="js/library/jquery.js"></script>
   <script type="text/javascript" src="js/library/jquery-ui.js"></script>
   <script type="text/javascript" src="js/library/bootstrap.js"></script>

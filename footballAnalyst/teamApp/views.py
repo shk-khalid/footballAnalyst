@@ -13,7 +13,7 @@ class TeamView(APIView):
             players = Player.objects.filter(team=team)
 
             paginator = PageNumberPagination()
-            paginator.page_size = 5  # Display 5 players per page
+            paginator.page_size = 20
             result_page = paginator.paginate_queryset(players, request)
             
             serializer = PlayerSerializer(result_page, many=True)

@@ -25,7 +25,7 @@ def fetch_matches():
         raise Exception("Error fetching matches: {}".format(str(e)))
 
 # Helper function to filter matches
-def filter_matches(matches, now, status=None, upcoming=False, recent=False):
+def filter_matches(matches, now, status=None, upcoming=False, recent=False, limit=None):
     utc_timezone = pytz.UTC
     filtered_matches = []
 
@@ -40,9 +40,11 @@ def filter_matches(matches, now, status=None, upcoming=False, recent=False):
         elif recent and match_date < now and match.get('status') in ['FINISHED', 'IN_PLAY', 'PAUSED']:
             filtered_matches.append(match)
 
-    # Sort matches by recency
+    # Sort matches by date
     if upcoming:
         filtered_matches.sort(key=lambda m: m['utcDate'])  # Ascending order for upcoming
+        if limit:
+            filtered_matches = filtered_matches[:limit]  # Limit to top `limit` upcoming matches
     elif recent:
         filtered_matches.sort(key=lambda m: m['utcDate'], reverse=True)  # Descending order for recent
 
@@ -50,11 +52,11 @@ def filter_matches(matches, now, status=None, upcoming=False, recent=False):
 
 # Base View
 class BaseFixtureView(APIView):
-    def fetch_and_filter(self, status=None, upcoming=False, recent=False):
+    def fetch_and_filter(self, status=None, upcoming=False, recent=False, limit=None):
         try:
             matches = fetch_matches()
             now = datetime.now(pytz.UTC)
-            return filter_matches(matches, now, status=status, upcoming=upcoming, recent=recent)
+            return filter_matches(matches, now, status=status, upcoming=upcoming, recent=recent, limit=limit)
         except Exception as e:
             return {"error": str(e)}
 
@@ -64,7 +66,7 @@ class FixtureView(BaseFixtureView):
         try:
             live_matches = self.fetch_and_filter(status='LIVE')
             recent_matches = self.fetch_and_filter(recent=True)
-            upcoming_matches = self.fetch_and_filter(upcoming=True)
+            upcoming_matches = self.fetch_and_filter(upcoming=True, limit=5)
 
             return Response({
                 'upcoming': upcoming_matches,
@@ -75,11 +77,11 @@ class FixtureView(BaseFixtureView):
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-# Upcoming Matches View
+# Upcoming Matches View (Top 5)
 class UpcomingMatchesView(BaseFixtureView):
     def get(self, request):
         try:
-            upcoming_matches = self.fetch_and_filter(upcoming=True)
+            upcoming_matches = self.fetch_and_filter(upcoming=True, limit=5)
             return Response(upcoming_matches, status=status.HTTP_200_OK)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
